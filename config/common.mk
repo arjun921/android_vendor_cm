@@ -62,6 +62,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false
 
+# Proprietary latinime libs needed for Keyboard swyping
+ifneq ($(filter shamu,$(TARGET_PRODUCT)),)
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+else
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+endif
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
