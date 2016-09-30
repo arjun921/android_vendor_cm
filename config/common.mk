@@ -111,6 +111,10 @@ endif
 # CM-specific init file
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.local.rc:root/init.cm.rc
+    
+# LegendROM apps
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/app/Viper4Android/Viper4Android.apk:/system/app/Viper4Android/Viper4Android.apk
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
