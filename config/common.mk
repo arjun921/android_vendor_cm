@@ -132,6 +132,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
+# swe_browser 
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/app/swe_browser/base.apk:system/app/swe_browser/base.apk \
+    vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libc++_shared.so:system/app/swe_browser/lib/arm/libc++_shared.so \
+    vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libicui18n.cr.so:system/app/swe_browser/lib/arm/libicui18n.cr.so \
+    vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libicuuc.cr.so:system/app/swe_browser/lib/arm/libicuuc.cr.so \
+    vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswe.so:system/app/swe_browser/lib/arm/libswe.so \
+    vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswecore.so:system/app/swe_browser/lib/arm/libswecore.so \
+    vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswev8.so:system/app/swe_browser/lib/arm/libswev8.so \
+    vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswewebrefiner.so:system/app/swe_browser/lib/arm/libswewebrefiner.so
+
 # Include CM audio files
 include vendor/cm/config/cm_audio.mk
 
