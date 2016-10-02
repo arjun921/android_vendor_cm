@@ -114,7 +114,6 @@ PRODUCT_COPY_FILES += \
     
 # LegendROM apps
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/app/Adaway/Adaway.apk:/system/app/Adaway/Adaway.apk \
     vendor/cm/prebuilt/common/app/Viper4Android/Viper4Android.apk:/system/app/Viper4Android/Viper4Android.apk
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
