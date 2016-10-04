@@ -33,6 +33,8 @@ PRODUCT_BOOTANIMATION := vendor/cm/prebuilt/common/bootanimation/$(TARGET_BOOTAN
 endif
 endif
 
+PRODUCT_BOOTANIMATION := vendor/cm/prebuilt/common/bootanimation/LegendROM.zip
+
 ifdef CM_NIGHTLY
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.rommanager.developerid=cyanogenmodnightly
