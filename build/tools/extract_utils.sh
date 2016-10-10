@@ -48,6 +48,7 @@ trap cleanup EXIT INT TERM ERR
 # $3: CM root directory
 # $4: is common device - optional, default to false
 # $5: cleanup - optional, default to true
+# $6: custom vendor makefile name - optional, default to false
 #
 # Must be called before any other functions can be used. This
 # sets up the internal state for a new vendor configuration.
@@ -76,7 +77,12 @@ function setup_vendor() {
         mkdir -p "$CM_ROOT/$OUTDIR"
     fi
 
-    export PRODUCTMK="$CM_ROOT"/"$OUTDIR"/"$DEVICE"-vendor.mk
+    VNDNAME="$6"
+    if [ -z "$VNDNAME" ]; then
+        VNDNAME="$DEVICE"
+    fi
+
+    export PRODUCTMK="$CM_ROOT"/"$OUTDIR"/"$VNDNAME"-vendor.mk
     export ANDROIDMK="$CM_ROOT"/"$OUTDIR"/Android.mk
     export BOARDMK="$CM_ROOT"/"$OUTDIR"/BoardConfigVendor.mk
 
@@ -249,10 +255,12 @@ function write_packages() {
                 printf 'LOCAL_MULTILIB := %s\n' "$EXTRA"
             fi
         elif [ "$CLASS" = "APPS" ]; then
-            if [ "$EXTRA" = "priv-app" ]; then
-                SRC="$SRC/priv-app"
-            else
-                SRC="$SRC/app"
+            if [ -z "$ARGS" ]; then
+                if [ "$EXTRA" = "priv-app" ]; then
+                    SRC="$SRC/priv-app"
+                else
+                    SRC="$SRC/app"
+                fi
             fi
             printf 'LOCAL_SRC_FILES := %s/%s\n' "$SRC" "$FILE"
             local CERT=platform
@@ -453,6 +461,7 @@ EOF
 # write_headers:
 #
 # $1: devices falling under common to be added to guard - optional
+# $2: custom guard - optional
 #
 # Calls write_header for each of the makefiles and creates
 # the initial path declaration and device guard for the
@@ -460,13 +469,19 @@ EOF
 #
 function write_headers() {
     write_header "$ANDROIDMK"
+
+    GUARD="$2"
+    if [ -z "$GUARD" ]; then
+        GUARD="TARGET_DEVICE"
+    fi
+
     cat << EOF >> "$ANDROIDMK"
 LOCAL_PATH := \$(call my-dir)
 
 EOF
     if [ "$COMMON" -ne 1 ]; then
         cat << EOF >> "$ANDROIDMK"
-ifeq (\$(TARGET_DEVICE),$DEVICE)
+ifeq (\$($GUARD),$DEVICE)
 
 EOF
     else
@@ -475,7 +490,7 @@ EOF
             exit 1
         fi
         cat << EOF >> "$ANDROIDMK"
-ifneq (\$(filter $1,\$(TARGET_DEVICE)),)
+ifneq (\$(filter $1,\$($GUARD)),)
 
 EOF
     fi
