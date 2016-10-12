@@ -141,6 +141,11 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswev8.so:system/app/swe_browser/lib/arm/libswev8.so \
     vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswewebrefiner.so:system/app/swe_browser/lib/arm/libswewebrefiner.so
 
+# SuperSU
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/cm/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 # Include CM audio files
 include vendor/cm/config/cm_audio.mk
 
