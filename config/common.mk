@@ -193,8 +193,7 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     Trebuchet \
     WallpaperPicker \
-    WeatherProvider \
-    masquerade
+    WeatherProvider
 
 # Exchange support
 PRODUCT_PACKAGES += \
