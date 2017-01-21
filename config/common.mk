@@ -13,26 +13,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    keyguard.no_require_sim=true \
-    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
-    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
-    ro.com.android.wifi-watchlist=GoogleGuest \
-    ro.setupwizard.enterprise_mode=1 \
-    ro.com.android.dateformat=MM-dd-yyyy \
-    ro.com.android.dataroaming=false \
-    ro.opa.eligible_device=true
-
-# Proprietary latinime libs needed for Keyboard swyping
-ifneq ($(filter shamu,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/lib/libjni_latinime.so:system/lib/libjni_latinime.so
-else
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
-endif
+    keyguard.no_require_sim=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=0
+
+# Enable Google Assistant on all devices.
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opa.eligible_device=true
 
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -132,8 +120,8 @@ include vendor/cm/config/cmsdk_common.mk
 endif
 
 # Bootanimation
-#PRODUCT_PACKAGES += \
-#    bootanimation.zip
+PRODUCT_PACKAGES += \
+    bootanimation.zip
 
 # Required CM packages
 PRODUCT_PACKAGES += \
@@ -263,8 +251,13 @@ PRODUCT_BOOT_JARS += \
 ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_PACKAGES += \
     procmem \
-    procrank \
+    procrank
+
+# Conditionally build in su
+ifeq ($(WITH_SU),true)
+PRODUCT_PACKAGES += \
     su
+endif
 endif
 
 DEVICE_PACKAGE_OVERLAYS += vendor/cm/overlay/common
