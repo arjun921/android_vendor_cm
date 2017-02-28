@@ -146,9 +146,7 @@ PRODUCT_PACKAGES += \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
-    CMFileManager \
     CMSettingsProvider \
-    CMWallpapers \
     Eleven \
     ExactCalculator \
     LiveLockScreenService \
