@@ -154,7 +154,7 @@ PRODUCT_PACKAGES += \
     Trebuchet \
     WallpaperPicker \
     WeatherProvider \
-    masquerade
+    ThemeInterfacer
 
 # Exchange support
 PRODUCT_PACKAGES += \
