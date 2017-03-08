@@ -4,3 +4,7 @@ $(call inherit-product, vendor/cm/config/common_mini.mk)
 # Required CM packages
 PRODUCT_PACKAGES += \
     LatinIME
+
+# Copy Magisk zip
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/magisk.zip:system/addon.d/magisk.zip

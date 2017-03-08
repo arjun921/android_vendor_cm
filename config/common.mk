@@ -171,6 +171,14 @@ PRODUCT_PACKAGES += \
     WeatherProvider \
     ThemeInterfacer
 
+# Magisk Manager
+PRODUCT_PACKAGES += \
+    MagiskManager
+
+# Copy Magisk zip
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/magisk.zip:system/addon.d/magisk.zip
+
 # Exchange support
 PRODUCT_PACKAGES += \
     Exchange2
