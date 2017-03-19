@@ -22,6 +22,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true
 
+# Set Pixel blue light theme on Gboard
+    PRODUCT_PROPERTY_OVERRIDES += \
+        ro.com.google.ime.theme_id=5
+
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Argon.ogg \
