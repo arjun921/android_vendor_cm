@@ -45,10 +45,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/NexusLauncher/NexusLauncher.apk:system/app/NexusLauncher/NexusLauncher.apk
 
-# NexusLauncherIcons
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/app/NexusLauncherIcons/NexusLauncherIcons.apk:system/app/NexusLauncherIcons/NexusLauncherIcons.apk
-
 # Wallpaper
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/Wallpaper/Wallpaper.apk:system/app/Wallpaper/Wallpaper.apk
