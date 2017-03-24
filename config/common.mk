@@ -161,6 +161,7 @@ PRODUCT_PACKAGES += \
     CMSettingsProvider \
     Eleven \
     ExactCalculator \
+    OmniStyle \
     LiveLockScreenService \
     LockClock \
     Trebuchet \
