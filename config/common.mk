@@ -159,6 +159,7 @@ PRODUCT_PACKAGES += \
 # Custom CM packages
 PRODUCT_PACKAGES += \
     CMSettingsProvider \
+    CustomTiles \
     Eleven \
     ExactCalculator \
     OmniStyle \
