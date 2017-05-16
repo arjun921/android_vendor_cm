@@ -112,7 +112,8 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswe.so:system/app/swe_browser/lib/arm/libswe.so \
     vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswecore.so:system/app/swe_browser/lib/arm/libswecore.so \
     vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswev8.so:system/app/swe_browser/lib/arm/libswev8.so \
-    vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswewebrefiner.so:system/app/swe_browser/lib/arm/libswewebrefiner.so
+    vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswewebrefiner.so:system/app/swe_browser/lib/arm/libswewebrefiner.so \
+    vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswenet.so:system/app/swe_browser/lib/arm/libswenet.so
 
 # Include CM audio files
 include vendor/cm/config/cm_audio.mk
@@ -165,7 +166,6 @@ PRODUCT_PACKAGES += \
     OmniStyle \
     LiveLockScreenService \
     LockClock \
-    Trebuchet \
     WallpaperPicker \
     WeatherProvider \
     ThemeInterfacer
