@@ -160,12 +160,12 @@ PRODUCT_PACKAGES += \
 # Custom CM packages
 PRODUCT_PACKAGES += \
     CMSettingsProvider \
-    CustomTiles \
     Eleven \
     ExactCalculator \
     OmniStyle \
     LiveLockScreenService \
     LockClock \
+    Trebuchet \
     WallpaperPicker \
     WeatherProvider \
     ThemeInterfacer
