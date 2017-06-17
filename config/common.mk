@@ -163,6 +163,7 @@ PRODUCT_PACKAGES += \
     Eleven \
     ExactCalculator \
     OmniStyle \
+    OmniJaws \
     LiveLockScreenService \
     LockClock \
     Trebuchet \
