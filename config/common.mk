@@ -87,6 +87,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/Viper4Android/Viper4Android.apk:/system/app/Viper4Android/Viper4Android.apk
 
+# Spectrum
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/app/spectrum.apk:/system/app/spectrum.apk
+
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
