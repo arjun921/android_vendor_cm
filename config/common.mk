@@ -286,7 +286,8 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.legendrom.version=$(LR_VERSION) \
     ro.modversion=$(LR_VERSION) \
-    lr.build.type=$(LR_BUILDTYPE)
+    lr.build.type=$(LR_BUILDTYPE) \
+    Default
 
 CM_DISPLAY_VERSION := $(LR_VERSION)
 
