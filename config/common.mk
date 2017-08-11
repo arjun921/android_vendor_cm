@@ -169,6 +169,10 @@ PRODUCT_PACKAGES += \
     WeatherProvider \
     ThemeInterfacer
 
+# OTAUpdates
+PRODUCT_PACKAGES += \
+    OTAUpdates
+
 # Magisk Manager
 PRODUCT_PACKAGES += \
     MagiskManager
