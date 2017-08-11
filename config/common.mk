@@ -43,10 +43,6 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/cm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
 
-# NexusLauncher
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/NexusLauncher/NexusLauncher.apk:system/app/NexusLauncher/NexusLauncher.apk
-
 # Wallpaper
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/Wallpaper/Wallpaper.apk:system/app/Wallpaper/Wallpaper.apk
@@ -108,6 +104,10 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswev8.so:system/app/swe_browser/lib/arm/libswev8.so \
     vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswewebrefiner.so:system/app/swe_browser/lib/arm/libswewebrefiner.so \
     vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswenet.so:system/app/swe_browser/lib/arm/libswenet.so
+
+# Lawnchair
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/app/Lawnchair.apk:system/app/Lawnchair.apk
 
 # Include CM audio files
 include vendor/cm/config/cm_audio.mk
