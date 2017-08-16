@@ -265,7 +265,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Needs for MTP Dirty Hack
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+    persist.sys.usb.config=mtp,adb
 
 # Telephony
 PRODUCT_PACKAGES += \
