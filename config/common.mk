@@ -43,10 +43,6 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/cm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
 
-# NexusLauncher
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/NexusLauncher/NexusLauncher.apk:system/app/NexusLauncher/NexusLauncher.apk
-
 # Wallpaper
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/Wallpaper/Wallpaper.apk:system/app/Wallpaper/Wallpaper.apk
@@ -109,6 +105,10 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswewebrefiner.so:system/app/swe_browser/lib/arm/libswewebrefiner.so \
     vendor/cm/prebuilt/common/app/swe_browser/lib/arm/libswenet.so:system/app/swe_browser/lib/arm/libswenet.so
 
+# Lawnchair
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/app/Lawnchair.apk:system/app/Lawnchair.apk
+
 # Include CM audio files
 include vendor/cm/config/cm_audio.mk
 
@@ -124,6 +124,11 @@ include vendor/cm/config/themes_common.mk
 ifneq ($(TARGET_DISABLE_CMSDK), true)
 # CMSDK
 include vendor/cm/config/cmsdk_common.mk
+endif
+
+# TWRP
+ifeq ($(WITH_TWRP),true)
+include vendor/cm/config/twrp.mk
 endif
 
 # Bootanimation
@@ -163,6 +168,10 @@ PRODUCT_PACKAGES += \
     WallpaperPicker \
     WeatherProvider \
     ThemeInterfacer
+
+# OTAUpdates
+PRODUCT_PACKAGES += \
+    OTAUpdates
 
 # Magisk Manager
 PRODUCT_PACKAGES += \
@@ -253,6 +262,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Storage manager
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.storage_manager.enabled=true
+
+# Needs for MTP Dirty Hack
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp
 
 # Telephony
 PRODUCT_PACKAGES += \
