@@ -159,7 +159,6 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     OmniStyle \
     OmniJaws \
-    LiveLockScreenService \
     LockClock \
     Trebuchet \
     WallpaperPicker \
