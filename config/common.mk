@@ -281,7 +281,7 @@ endif
 
 DEVICE_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
-PRODUCT_VERSION = 18.0
+PRODUCT_VERSION = 19.0
 ifneq ($(LR_BUILDTYPE),)
 LR_VERSION := LegendROM-N-v$(PRODUCT_VERSION)-$(shell date -u +%Y%m%d)-$(CM_BUILD)-$(LR_BUILDTYPE)
 else
